@@ -21,36 +21,7 @@ color:white;
 overflow-x:hidden;
 }
 
-/* LOADING SCREEN */
-
-.loader{
-position:fixed;
-width:100%;
-height:100%;
-background:#020814;
-display:flex;
-justify-content:center;
-align-items:center;
-z-index:9999;
-animation:fadeOut 2s forwards;
-animation-delay:2s;
-}
-
-.loader h1{
-font-size:40px;
-color:#4aa3ff;
-letter-spacing:4px;
-text-shadow:0 0 25px #1f6fff;
-}
-
-@keyframes fadeOut{
-to{
-opacity:0;
-visibility:hidden;
-}
-}
-
-/* BACKGROUND GRID */
+/* BACKGROUND */
 
 .bg-grid{
 position:fixed;
@@ -65,8 +36,6 @@ opacity:0.15;
 z-index:-5;
 }
 
-/* ORBS */
-
 .orb{
 position:fixed;
 border-radius:50%;
@@ -75,36 +44,14 @@ z-index:-4;
 animation:float 8s ease-in-out infinite;
 }
 
-.orb1{
-width:350px;
-height:350px;
-background:#0066ff;
-top:-100px;
-left:-100px;
-}
-
-.orb2{
-width:250px;
-height:250px;
-background:#00ccff;
-bottom:-50px;
-right:-50px;
-animation-delay:2s;
-}
-
-.orb3{
-width:180px;
-height:180px;
-background:#0044aa;
-top:50%;
-left:40%;
-animation-delay:4s;
-}
+.orb1{width:350px;height:350px;background:#0066ff;top:-100px;left:-100px;}
+.orb2{width:250px;height:250px;background:#00ccff;bottom:-50px;right:-50px;animation-delay:2s;}
+.orb3{width:180px;height:180px;background:#0044aa;top:50%;left:40%;animation-delay:4s;}
 
 @keyframes float{
-0%{transform:translateY(0px);}
+0%{transform:translateY(0);}
 50%{transform:translateY(-20px);}
-100%{transform:translateY(0px);}
+100%{transform:translateY(0);}
 }
 
 /* HEADER */
@@ -158,131 +105,37 @@ max-width:45%;
 .left h1{
 font-size:80px;
 line-height:1.05;
-margin-bottom:25px;
 }
 
 .left h1 span{
 color:#4aa3ff;
-text-shadow:
-0 0 15px #1f6fff,
-0 0 40px #1f6fff,
-0 0 70px #1f6fff;
+text-shadow:0 0 40px #1f6fff;
 }
 
 .left p{
+margin-top:20px;
 font-size:18px;
-line-height:1.8;
 opacity:0.85;
-margin-bottom:35px;
+line-height:1.8;
 }
 
 .btn{
-padding:15px 35px;
+margin-top:25px;
+padding:14px 30px;
 border:none;
-border-radius:14px;
+border-radius:12px;
 background:linear-gradient(90deg,#0066ff,#00ccff);
 color:white;
-font-size:16px;
 cursor:pointer;
-box-shadow:
-0 0 25px rgba(0,102,255,0.5),
-0 0 70px rgba(0,204,255,0.25);
-transition:0.4s;
+font-size:16px;
 text-decoration:none;
 display:inline-block;
+box-shadow:0 0 25px rgba(0,102,255,0.5);
+transition:0.3s;
 }
 
 .btn:hover{
-transform:translateY(-6px) scale(1.05);
-}
-
-/* MONITOR WALL */
-
-.right{
-width:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-position:relative;
-}
-
-.monitor-wall{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:20px;
-transform:rotateY(-10deg) rotateX(5deg);
-}
-
-.screen{
-width:260px;
-height:160px;
-background:linear-gradient(135deg,#071425,#0b2445);
-border-radius:20px;
-position:relative;
-overflow:hidden;
-border:1px solid rgba(255,255,255,0.08);
-box-shadow:
-0 0 30px rgba(0,102,255,0.25),
-inset 0 0 20px rgba(0,204,255,0.08);
-animation:float 6s ease-in-out infinite;
-}
-
-.screen::before{
-content:"";
-position:absolute;
-width:100%;
-height:100%;
-background:
-linear-gradient(
-transparent,
-rgba(0,255,255,0.08),
-transparent
-);
-animation:scan 3s linear infinite;
-}
-
-@keyframes scan{
-0%{transform:translateY(-100%);}
-100%{transform:translateY(100%);}
-}
-
-.screen h3{
-position:absolute;
-top:15px;
-left:15px;
-color:#4aa3ff;
-}
-
-.screen p{
-position:absolute;
-bottom:15px;
-left:15px;
-font-size:14px;
-opacity:0.8;
-}
-
-/* FLOATING CARDS */
-
-.float-card{
-position:absolute;
-padding:18px 24px;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(10px);
-border-radius:18px;
-border:1px solid rgba(255,255,255,0.08);
-box-shadow:0 0 30px rgba(0,102,255,0.2);
-animation:float 5s ease-in-out infinite;
-}
-
-.card1{
-top:40px;
-left:-20px;
-}
-
-.card2{
-bottom:20px;
-right:-20px;
-animation-delay:2s;
+transform:scale(1.05);
 }
 
 /* SECTIONS */
@@ -294,8 +147,8 @@ text-align:center;
 
 .section h2{
 font-size:50px;
-margin-bottom:20px;
 color:#4aa3ff;
+margin-bottom:20px;
 }
 
 .section p{
@@ -316,81 +169,66 @@ margin-top:60px;
 }
 
 .feature{
-width:280px;
+width:300px;
 padding:35px;
 background:rgba(255,255,255,0.05);
-border-radius:25px;
+border-radius:20px;
 backdrop-filter:blur(10px);
 border:1px solid rgba(255,255,255,0.08);
-transition:0.4s;
+transition:0.3s;
 }
 
 .feature:hover{
-transform:translateY(-12px) scale(1.04);
-box-shadow:
-0 0 35px rgba(0,102,255,0.35);
+transform:translateY(-10px);
+box-shadow:0 0 30px rgba(0,102,255,0.3);
 }
 
 .feature h3{
+color:#4aa3ff;
+margin-bottom:15px;
+}
+
+/* PACKAGES */
+
+.packages{
+padding:120px 60px;
+text-align:center;
+}
+
+.package-container{
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+margin-top:60px;
+}
+
+.package{
+width:380px;
+padding:40px;
+background:rgba(255,255,255,0.05);
+border-radius:25px;
+border:1px solid rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+transition:0.4s;
+position:relative;
+overflow:hidden;
+}
+
+.package:hover{
+transform:translateY(-12px);
+}
+
+.package h3{
+font-size:28px;
 margin-bottom:15px;
 color:#4aa3ff;
 }
 
-/* STORE */
-
-.package{
-position:relative;
-overflow:hidden;
-min-height:650px;
-}
-
-.package::before{
-content:"";
-position:absolute;
-width:200%;
-height:200%;
-background:linear-gradient(
-45deg,
-transparent,
-rgba(255,255,255,0.04),
-transparent
-);
-transform:rotate(25deg);
-left:-150%;
-transition:1s;
-}
-
-.package:hover::before{
-left:100%;
-}
-
-.silver-package{
-border:1px solid rgba(255,255,255,0.1);
-}
-
-.platinum-package{
-transform:scale(1.08);
-border:1px solid rgba(0,204,255,0.4);
-box-shadow:
-0 0 40px rgba(0,204,255,0.25);
-}
-
-.premium-package{
-border:1px solid rgba(255,215,0,0.4);
-box-shadow:
-0 0 40px rgba(255,215,0,0.2);
-}
-
-.popular-tag{
-position:absolute;
-top:20px;
-right:-35px;
-background:#00ccff;
-color:black;
-padding:8px 50px;
-font-size:12px;
+.price{
+font-size:55px;
+margin:20px 0;
 font-weight:bold;
-transform:rotate(45deg);
 }
 
 .package ul{
@@ -400,90 +238,43 @@ line-height:2;
 margin-top:20px;
 }
 
+.package ul li{
+font-size:15px;
+}
+
 /* CONTACT */
 
 .contact{
 padding:100px 20px;
 text-align:center;
-background:rgba(0,0,0,0.25);
-backdrop-filter:blur(10px);
+background:rgba(0,0,0,0.3);
 }
 
 .contact h2{
 font-size:50px;
-margin-bottom:20px;
 color:#4aa3ff;
+margin-bottom:20px;
 }
 
 .contact p{
 font-size:22px;
-margin:12px 0;
+margin:10px 0;
 }
-
-.socials{
-margin-top:30px;
-}
-
-.socials a{
-display:inline-block;
-margin:10px;
-padding:12px 20px;
-border-radius:12px;
-background:rgba(255,255,255,0.05);
-color:white;
-text-decoration:none;
-transition:0.3s;
-}
-
-.socials a:hover{
-background:#0066ff;
-}
-
-/* FOOTER */
 
 footer{
-padding:30px;
+padding:25px;
 text-align:center;
 opacity:0.7;
-font-size:14px;
 }
 
 /* MOBILE */
 
 @media(max-width:1000px){
-
 .hero{
 flex-direction:column;
 text-align:center;
-padding-top:120px;
 }
-
-.left{
-max-width:100%;
-margin-bottom:60px;
-}
-
-.right{
-width:100%;
-}
-
-.left h1{
-font-size:52px;
-}
-
-.monitor-wall{
-transform:none;
-grid-template-columns:1fr;
-}
-
-header{
-padding:20px;
-}
-
-nav{
-display:none;
-}
-
+.left{max-width:100%;}
 }
 
 </style>
@@ -491,212 +282,123 @@ display:none;
 
 <body>
 
-<div class="loader">
-<h1>KSB GLOBAL VISION</h1>
-</div>
-
 <div class="bg-grid"></div>
-
 <div class="orb orb1"></div>
 <div class="orb orb2"></div>
 <div class="orb orb3"></div>
 
 <header>
-
-<div class="logo">
-KSB GLOBAL VISION
-</div>
-
+<div class="logo">KSB GLOBAL VISION</div>
 <nav>
+<a href="#home">Home</a>
 <a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#store">Packages</a>
+<a href="#packages">Packages</a>
 <a href="#contact">Contact</a>
 </nav>
-
 </header>
 
-<section class="hero">
+<!-- HERO -->
+<section class="hero" id="home">
 
 <div class="left">
 
 <h1>
-GLOBAL<br>
-<span>SECURITY</span>
+CHECK<br>
+<span>ACCESS</span><br>
+SYSTEM
 </h1>
 
 <p>
-KSB Global Vision delivers futuristic CCTV monitoring,
-AI-powered surveillance and next-generation smart
-security infrastructure for enterprises worldwide.
+Advanced AI-powered CCTV monitoring, global security access,
+and real-time surveillance system built for modern businesses.
 </p>
 
-<a href="#store" class="btn">
-ACCESS SYSTEM
-</a>
-
-</div>
-
-<div class="right">
-
-<div class="monitor-wall">
-
-<div class="screen">
-<h3>LIVE CCTV</h3>
-<p>Real-Time Monitoring</p>
-</div>
-
-<div class="screen">
-<h3>AI SECURITY</h3>
-<p>Smart Threat Detection</p>
-</div>
-
-<div class="screen">
-<h3>GLOBAL ACCESS</h3>
-<p>Worldwide Surveillance</p>
-</div>
-
-<div class="screen">
-<h3>CLOUD STORAGE</h3>
-<p>Encrypted Infrastructure</p>
-</div>
-
-</div>
-
-<div class="float-card card1">
-<h3>24/7 LIVE</h3>
-<p>AI Surveillance Active</p>
-</div>
-
-<div class="float-card card2">
-<h3>GLOBAL SYSTEM</h3>
-<p>Future Security Network</p>
-</div>
+<a href="#packages" class="btn">ENTER SYSTEM</a>
 
 </div>
 
 </section>
 
+<!-- ABOUT -->
 <section class="section" id="about">
 
-<h2>ABOUT US</h2>
+<h2>ABOUT KSB GLOBAL VISION</h2>
 
 <p>
-KSB Global Vision is a futuristic surveillance and smart
-security company focused on advanced CCTV monitoring,
-AI-powered security systems and worldwide remote access
-technology.
+We provide next-generation security systems including AI monitoring,
+real-time CCTV access, and global surveillance solutions designed
+for businesses, shops, and enterprises worldwide.
 </p>
-
-</section>
-
-<section class="section" id="services">
-
-<h2>OUR SERVICES</h2>
 
 <div class="features">
 
 <div class="feature">
-<h3>🌍 Global Camera Access</h3>
-<p>Monitor surveillance systems from anywhere.</p>
+<h3>🌍 Global Access</h3>
+<p>Monitor cameras anywhere in the world instantly.</p>
 </div>
 
 <div class="feature">
-<h3>🔐 Encrypted Security</h3>
-<p>Military-grade protection systems.</p>
+<h3>🔐 AI Security</h3>
+<p>Smart detection and automated threat alerts.</p>
 </div>
 
 <div class="feature">
-<h3>📡 AI Monitoring</h3>
-<p>Advanced threat analysis and detection.</p>
+<h3>⚡ Fast Monitoring</h3>
+<p>Real-time security control with zero delay systems.</p>
 </div>
 
 </div>
 
 </section>
 
-<section class="section" id="store">
+<!-- PACKAGES -->
+<section class="packages" id="packages">
 
 <h2>SECURITY PACKAGES</h2>
 
-<p>
-Choose the perfect surveillance and monitoring package
-for your business.
-</p>
+<div class="package-container">
 
-<div class="features">
+<!-- KSB SECURE -->
+<div class="package">
 
-<div class="feature package silver-package">
+<h3>KSB SECURE</h3>
 
-<h3>🥈 SILVER PACKAGE</h3>
-
-<h1 style="font-size:48px;margin:20px 0;color:#4aa3ff;">
-$200
-</h1>
+<div class="price">$500</div>
 
 <ul>
-<li>✔ Normal Security Monitoring</li>
-<li>✔ CCTV Surveillance</li>
-<li>✔ Remote Viewing</li>
-<li>✔ Mobile Monitoring</li>
-<li>✔ Cloud Backup</li>
+<li>✔ 12 Hours Monitoring</li>
+<li>✔ Physical Security Access</li>
+<li>✔ AI Power Surveillance</li>
+<li>✔ CCTV Monitoring System</li>
+<li>✔ Remote Access Control</li>
+<li>✔ Smart Alerts System</li>
+<li>✔ Basic Cloud Backup</li>
 </ul>
 
-<a href="#contact" class="btn" style="margin-top:25px;">
-GET SILVER
-</a>
+<a href="#contact" class="btn">GET SECURE</a>
 
 </div>
 
-<div class="feature package platinum-package">
+<!-- KSB SPECIAL -->
+<div class="package">
 
-<div class="popular-tag">
-POPULAR
-</div>
+<h3>KSB SPECIAL</h3>
 
-<h3>💎 PLATINUM PACKAGE</h3>
-
-<h1 style="font-size:48px;margin:20px 0;color:#00ccff;">
-$400
-</h1>
+<div class="price">$750</div>
 
 <ul>
-<li>✔ Advanced Monitoring</li>
-<li>✔ Advanced Security</li>
-<li>✔ Global Access</li>
-<li>✔ AI Motion Detection</li>
-<li>✔ Real-Time Alerts</li>
-<li>✔ Priority Support</li>
+<li>✔ 24 Hours Monitoring</li>
+<li>✔ Full Physical Access Control</li>
+<li>✔ Advanced AI Security System</li>
+<li>✔ Ultra CCTV Monitoring</li>
+<li>✔ Global Access System</li>
+<li>✔ Real-Time Threat Detection</li>
+<li>✔ Premium Cloud Security</li>
+<li>✔ Priority Support Access</li>
+<li>✔ Maximum Protection Mode</li>
 </ul>
 
-<a href="#contact" class="btn" style="margin-top:25px;">
-GET PLATINUM
-</a>
-
-</div>
-
-<div class="feature package premium-package">
-
-<h3>👑 PREMIUM PACKAGE</h3>
-
-<h1 style="font-size:48px;margin:20px 0;color:#ffd700;">
-$650
-</h1>
-
-<ul>
-<li>✔ 24/7 AI Monitoring</li>
-<li>✔ Ultra Advanced Security</li>
-<li>✔ AI Threat Detection</li>
-<li>✔ Enterprise Surveillance</li>
-<li>✔ VIP Access</li>
-<li>✔ Ultra Secure Cloud</li>
-<li>✔ Smart Tracking System</li>
-<li>✔ Full Global Access</li>
-</ul>
-
-<a href="#contact" class="btn" style="margin-top:25px;background:linear-gradient(90deg,#ffd700,#ff9900);">
-GET PREMIUM
-</a>
+<a href="#contact" class="btn">GET SPECIAL</a>
 
 </div>
 
@@ -704,20 +406,13 @@ GET PREMIUM
 
 </section>
 
+<!-- CONTACT -->
 <section class="contact" id="contact">
 
 <h2>CONTACT US</h2>
 
 <p>📞 +92 336 9911072</p>
 <p>📞 +92 301 2406843</p>
-
-<div class="socials">
-
-<a href="#">Instagram</a>
-<a href="#">WhatsApp</a>
-<a href="#">TikTok</a>
-
-</div>
 
 </section>
 
